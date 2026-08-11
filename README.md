@@ -1,458 +1,484 @@
-````markdown
 # BE Capstone Project
 
 ## Project Title
 
-**Write the full title of your project here**
+**ZAEMON — Dynamically Balanced Wheeled Bipedal Robot**
 
 ---
 
 ## Team Details
 
-| Sr. No. | Name of Student | Roll No. | Branch | Email ID |
-|---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
+| Sr. No. | Name of Student | Roll No. | Branch                  | Email ID |
+| ------- | --------------- | -------- | ----------------------- | -------- |
+| 1       |Suraj Kumbhar|9| Automation and Robotics |2023.suraj.kumbhar@ves.ac.in|
+| 2       |Baljeet Singh Labana|10| Automation and Robotics |2023.baljeet.labana@ves.ac.in|
+| 3       |Aayush Maluste|13| Automation and Robotics |2023.aayush.maulste@ves.ac.in|
+| 4       |Jai Bagul|35| Automation and Robotics |2023.jai.bagul@ves.ac.in|
 
 ---
 
 ## Guide Details
 
-**Project Guide:**  
-**Department:** Automation and Robotics  
-**Institute:** VESIT, Mumbai  
+**Project Guide: **
+**Department:** Automation and Robotics
+**Institute:** VESIT, Mumbai
 
 ---
 
 ## Problem Statement
 
-Write a clear problem statement here.
+Conventional wheeled robots provide efficient locomotion but are generally limited to stable configurations and relatively simple movements. Legged robots offer greater mobility and dynamic capabilities but require more complex mechanical structures and control systems.
 
-Example:
-
-> The aim of this project is to design and develop a system that solves the problem of __________ by using __________ technology.
+The aim of ZAEMON is to design and develop a dynamically balanced wheeled bipedal robot capable of maintaining balance, performing controlled wheeled locomotion, and executing dynamic movements such as jumping through real-time sensing, trajectory planning, dynamic modelling, and feedback control.
 
 ---
 
 ## Abstract
 
-Write a short summary of the project in 150–250 words.
+ZAEMON is a dynamically balanced wheeled bipedal robot developed to combine the efficiency of wheeled locomotion with the dynamic capabilities of a legged robotic system. Due to its elevated center of mass, the robot behaves similarly to an inverted pendulum and requires continuous active stabilization to remain balanced.
 
-The abstract should include:
+The project focuses on the mechanical design, kinematic and dynamic modelling, trajectory planning, and real-time control of the robot. Lagrangian mechanics is used to formulate the equations of motion, while the Newton-Euler method is used for efficient inverse dynamics computation. Joint-space and Cartesian-space trajectory planning are used to generate smooth and controlled movements for crouching, launching, landing, and wheeled locomotion.
 
-- Background of the problem
-- Proposed solution
-- Technology used
-- Expected outcome
-- Application area
+An IMU provides real-time orientation feedback for estimating the robot's tilt and motion. PID control is used for balance stabilization and normal locomotion, while computed torque control is investigated for dynamic movements such as jumping. Cubic spline trajectories are used to generate smooth motion profiles and reduce sudden changes in motion.
+
+The project aims to develop and experimentally validate a compact robotic platform capable of dynamic balancing, controlled locomotion, and agile movement.
 
 ---
 
 ## Objectives
 
-1. To study the existing problem and available solutions.
-2. To design a suitable hardware/software/system architecture.
-3. To implement the proposed solution.
-4. To test and validate the system.
-5. To document and publish the project work.
+1. To design and develop a dynamically balanced wheeled bipedal robot.
+2. To study the kinematics and dynamics of the robotic system.
+3. To develop a mathematical model using Lagrangian mechanics.
+4. To implement inverse dynamics using the Newton-Euler method.
+5. To develop smooth joint-space and Cartesian-space trajectories.
+6. To implement real-time balance control using IMU feedback.
+7. To implement PID-based stabilization for balancing and locomotion.
+8. To investigate computed torque control for dynamic movements.
+9. To integrate the mechanical, electrical, and software systems.
+10. To experimentally test and validate the developed system.
 
 ---
 
 ## Scope of the Project
 
-Mention what the project will cover.
+The project covers:
 
-Example:
-
-- Design and development of prototype
-- Hardware implementation
-- Software/mobile/web interface
-- Data collection and testing
-- Performance analysis
+* Mechanical design and development
+* Motor and actuator selection
+* Embedded control system development
+* IMU-based state estimation
+* Kinematic modelling
+* Dynamic modelling
+* Lagrangian formulation
+* Newton-Euler inverse dynamics
+* Joint-space trajectory planning
+* Cartesian-space trajectory planning
+* Cubic spline trajectory generation
+* PID-based balance control
+* Computed torque control
+* Wheeled locomotion
+* Dynamic movement and jumping
+* Simulation and experimental validation
 
 ---
 
 ## Existing System
 
-Describe the currently available system or method.
+Conventional wheeled robots provide efficient and relatively simple locomotion but have limited ability to dynamically change their body configuration or perform agile movements.
 
-Mention its limitations:
+Legged robots provide greater mobility and dynamic capabilities but typically involve:
 
-- High cost
-- Low accuracy
-- Manual process
-- Lack of automation
-- Poor scalability
-- Limited accessibility
+* Higher mechanical complexity
+* Multiple actuators
+* Complex control algorithms
+* Higher computational requirements
+* Increased power consumption
+
+ZAEMON explores a hybrid approach that combines efficient wheeled locomotion with actively controlled leg joints.
 
 ---
 
 ## Proposed System
 
-Describe your proposed solution.
+ZAEMON combines wheeled locomotion with an actively controlled bipedal structure.
 
-Include:
+The system uses:
 
-- Main idea
-- How it works
-- Major components
-- Expected benefits
+* Wheels for efficient ground locomotion
+* Actuated leg joints for posture and dynamic movement
+* IMU feedback for real-time balance estimation
+* Embedded control for real-time computation
+* Kinematic and dynamic models for motion analysis
+* Trajectory planning for controlled movement
+* PID control for balance stabilization
+* Computed torque control for dynamic movements
+
+During balancing, ZAEMON is modelled as an inverted pendulum on wheels. The controller continuously estimates the robot's state and generates corrective motor commands to maintain stability.
 
 ---
 
 ## System Architecture
 
-Add block diagram or system architecture image here.
+The overall system consists of the mechanical structure, actuators, sensors, motor drivers, embedded controller, and control algorithms.
 
-```markdown
 ![System Architecture](images/system_architecture.png)
-````
 
-Briefly explain the architecture.
+### Control Flow
+
+```text
+             Sensors
+          IMU / Encoders
+                |
+                v
+        State Estimation
+                |
+                v
+       Trajectory Planning
+                |
+                v
+      Kinematics / Dynamics
+                |
+                v
+            Control
+          /         \
+        PID     Computed Torque
+          \         /
+                |
+                v
+         Motor Commands
+                |
+                v
+         Motor Drivers
+                |
+                v
+            Actuators
+                |
+                v
+          Robot Motion
+                |
+                └──────> Sensor Feedback
+```
 
 ---
 
 ## Hardware Requirements
 
-| Sr. No. | Component | Specification | Quantity | Purpose |
-| ------- | --------- | ------------- | -------- | ------- |
-| 1       |           |               |          |         |
-| 2       |           |               |          |         |
-| 3       |           |               |          |         |
-| 4       |           |               |          |         |
+The hardware architecture consists of:
+
+* Microcontroller
+* IMU
+* Motors and actuators
+* Motor drivers
+* Encoders
+* Power supply and battery system
+* Voltage regulation and power distribution circuitry
+
+Detailed hardware specifications will be documented as the design is finalized.
 
 ---
 
 ## Software Requirements
 
-| Sr. No. | Software / Tool | Version | Purpose |
-| ------- | --------------- | ------- | ------- |
-| 1       |                 |         |         |
-| 2       |                 |         |         |
-| 3       |                 |         |         |
+The software development environment includes:
+
+* Embedded firmware development tools
+* MATLAB / Simulink for modelling and simulation
+* Python for analysis and supporting tools
+* CAD software for mechanical design
+* Git and GitHub for version control and documentation
 
 ---
 
 ## Technologies Used
 
-Mention technologies used in the project.
-
-Example:
-
-* Embedded C / Python / JavaScript
-* Arduino / STM32 / ESP32 / Raspberry Pi
-* ROS / MATLAB / Simulink
-* Machine Learning / Computer Vision
-* IoT / Cloud / Mobile App
-* PCB Design / CAD Design
+* Embedded Systems
+* IMU-based State Estimation
+* PID Control
+* Computed Torque Control
+* Kinematic Modelling
+* Lagrangian Dynamics
+* Newton-Euler Dynamics
+* Inverse Dynamics
+* Joint-Space Trajectory Planning
+* Cartesian-Space Trajectory Planning
+* Cubic Spline Trajectory Generation
+* MATLAB / Python Simulation
+* CAD Design
+* PCB and Electronics Design
+* Git and GitHub
 
 ---
 
 ## Methodology
 
-Explain the step-by-step approach.
+The project follows an iterative development approach:
 
-1. Literature survey
-2. Problem identification
-3. Requirement analysis
-4. System design
-5. Hardware/software development
-6. Integration
-7. Testing and validation
-8. Documentation and publication
+1. Literature survey and study of dynamically balanced robotic systems.
+2. Identification of mechanical, electrical, and control requirements.
+3. Mechanical and electrical system design.
+4. Selection of actuators, sensors, controllers, and power components.
+5. Development of the kinematic model.
+6. Development of the dynamic model using Lagrangian mechanics.
+7. Development of inverse dynamics using the Newton-Euler method.
+8. Development of joint-space and Cartesian-space trajectories.
+9. Implementation of PID-based balance control.
+10. Development of computed torque control for dynamic movement.
+11. Simulation and validation of the control system.
+12. Hardware fabrication and system integration.
+13. Experimental testing and performance evaluation.
 
 ---
 
 ## Project Timeline
 
-| Week / Month | Task Planned          | Status                            |
-| ------------ | --------------------- | --------------------------------- |
-| Week 1       | Problem finalization  | Pending / In Progress / Completed |
-| Week 2       | Literature survey     |                                   |
-| Week 3       | Requirement analysis  |                                   |
-| Week 4       | System design         |                                   |
-| Week 5       | Prototype development |                                   |
-| Week 6       | Testing               |                                   |
-| Week 7       | Documentation         |                                   |
-| Week 8       | Paper writing         |                                   |
+| Phase | Task                                        | Status      |
+| ----- | ------------------------------------------- | ----------- |
+| 1     | Problem definition and literature survey    | In Progress |
+| 2     | System and mechanical design                | Planned     |
+| 3     | Kinematic and dynamic modelling             | Planned     |
+| 4     | Electronics and embedded system development | Planned     |
+| 5     | Trajectory planning and control development | Planned     |
+| 6     | Prototype fabrication and integration       | Planned     |
+| 7     | Testing and validation                      | Planned     |
+| 8     | Final documentation                         | Planned     |
 
 ---
 
 ## Weekly Progress Updates
 
-Students must update this section every week.
-
-| Week   | Date | Work Completed | Work Planned for Next Week | Issues / Challenges | GitHub Commit Link |
-| ------ | ---- | -------------- | -------------------------- | ------------------- | ------------------ |
-| Week 1 |      |                |                            |                     |                    |
-| Week 2 |      |                |                            |                     |                    |
-| Week 3 |      |                |                            |                     |                    |
-| Week 4 |      |                |                            |                     |                    |
-| Week 5 |      |                |                            |                     |                    |
-| Week 6 |      |                |                            |                     |                    |
-| Week 7 |      |                |                            |                     |                    |
-| Week 8 |      |                |                            |                     |                    |
+| Week   | Date | Work Completed | Next Steps | Issues / Challenges |
+| ------ | ---- | -------------- | ---------- | ------------------- |
+| Week 1 |      |                |            |                     |
 
 ---
 
 ## Design Files
 
-Upload and link all design files here.
+Design files are maintained in the following directories:
 
-| File Type       | File Name / Link | Description |
-| --------------- | ---------------- | ----------- |
-| CAD Model       |                  |             |
-| Circuit Diagram |                  |             |
-| PCB Design      |                  |             |
-| Flowchart       |                  |             |
-| Simulation File |                  |             |
+```text
+hardware/
+├── CAD/
+├── PCB/
+├── schematics/
+└── BOM/
+```
 
 ---
 
 ## Circuit Diagram
 
-Add circuit diagram image here.
-
-```markdown
-![Circuit Diagram](images/circuit_diagram.png)
-```
+The circuit diagram will be added as the electronics architecture is finalized.
 
 ---
 
 ## Flowchart / Algorithm
 
-Add flowchart image here.
+The control flow of ZAEMON follows a continuous feedback loop:
 
-```markdown
-![Flowchart](images/flowchart.png)
+```text
+Start
+  |
+  v
+Initialize System
+  |
+  v
+Read IMU / Encoder Data
+  |
+  v
+Estimate Robot State
+  |
+  v
+Generate Desired Trajectory
+  |
+  v
+Calculate Control Action
+  |
+  v
+Generate Motor Commands
+  |
+  v
+Drive Motors
+  |
+  v
+Read Updated State
+  |
+  └──────────────> Repeat
 ```
 
-### Algorithm
+### Control Algorithm
 
-1. Start
-2. Initialize the system
-3. Read input from sensors/user
-4. Process the data
-5. Generate output/control action
-6. Display/store/transmit result
-7. Stop
+1. Initialize the controller and sensors.
+2. Read IMU and encoder measurements.
+3. Estimate the current robot state.
+4. Calculate the error from the desired state.
+5. Generate the desired trajectory.
+6. Calculate the required control action.
+7. Generate motor commands.
+8. Apply commands to the actuators.
+9. Read the updated sensor state.
+10. Repeat the control loop in real time.
 
 ---
 
 ## Implementation Details
 
-Explain the actual implementation of the project.
-
 ### Hardware Implementation
 
-Write details about connections, components, power supply, sensors, actuators, PCB, enclosure, etc.
+The hardware implementation consists of the mechanical structure, actuators, motor drivers, embedded controller, IMU, encoders, and power system.
+
+The mechanical structure is designed to provide the required degrees of freedom for balancing, locomotion, and dynamic movement.
 
 ### Software Implementation
 
-Write details about code structure, libraries used, algorithms, communication protocols, database, app, cloud, etc.
-
----
-
-## Code Structure
+The software is organized into firmware, control algorithms, simulation, and supporting tools.
 
 ```text
-BE-Capstone-Project/
+software/
+├── firmware/
+├── control/
+├── simulation/
+└── tools/
+```
+
+The control software handles:
+
+* Sensor acquisition
+* State estimation
+* Trajectory generation
+* Dynamic calculations
+* Controller execution
+* Motor command generation
+* Real-time feedback
+
+---
+
+## Repository Structure
+
+```text
+ZAEMON/
 │
 ├── README.md
+│
 ├── docs/
-│   ├── literature_survey.md
-│   ├── project_report.pdf
-│   └── presentation.pptx
+│   ├── progress/
+│   ├── design/
+│   └── reports/
 │
 ├── hardware/
-│   ├── circuit_diagram.png
-│   ├── pcb_design/
-│   └── cad_model/
+│   ├── CAD/
+│   ├── PCB/
+│   ├── schematics/
+│   └── BOM/
 │
 ├── software/
-│   ├── src/
-│   ├── include/
-│   └── tests/
+│   ├── firmware/
+│   ├── control/
+│   ├── simulation/
+│   └── tools/
 │
 ├── images/
-│   ├── system_architecture.png
-│   ├── prototype_photo.jpg
-│   └── results.png
 │
-└── references/
-    └── papers/
+└── reference/
 ```
 
 ---
 
-## How to Run the Project
+## How to Run
 
-### Step 1: Clone the Repository
-
-```bash
-git clone https://github.com/username/project-name.git
-```
-
-### Step 2: Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-or mention specific software/library installation steps.
-
-### Step 3: Upload / Run the Code
-
-```bash
-python main.py
-```
-
-or
-
-```bash
-arduino-cli upload -p COMx --fqbn board_name
-```
-
-### Step 4: Observe the Output
-
-Mention the expected output of the project.
-
----
-
-## Testing and Results
-
-| Test No. | Test Description | Expected Result | Actual Result | Status      |
-| -------- | ---------------- | --------------- | ------------- | ----------- |
-| 1        |                  |                 |               | Pass / Fail |
-| 2        |                  |                 |               | Pass / Fail |
-| 3        |                  |                 |               | Pass / Fail |
-
----
-
-## Result Images / Videos
-
-Add images or videos of the working prototype.
-
-```markdown
-![Prototype](images/prototype_photo.jpg)
-```
-
-Video Link:
-
-```markdown
-[Project Demo Video](https://drive.google.com/your-video-link)
-```
+Build, firmware upload, and simulation instructions will be added as the software and hardware platforms are finalized.
 
 ---
 
 ## Applications
 
-Mention real-world applications of the project.
+Potential applications of ZAEMON include:
 
-1.
-2.
-3.
-4.
+1. Research in dynamically balanced robotics.
+2. Agile robotic locomotion research.
+3. Balance and control system research.
+4. Dynamic trajectory and model-based control research.
+5. Educational and experimental robotics.
 
 ---
 
 ## Advantages
 
-1.
-2.
-3.
-4.
+1. Combines wheeled locomotion with bipedal movement.
+2. Enables active dynamic balancing.
+3. Supports model-based motion planning and control.
+4. Provides a platform for studying dynamic robotic movement.
+5. Can be extended with advanced control and autonomous capabilities.
 
 ---
 
 ## Limitations
 
-1.
-2.
-3.
-4.
+1. Requires continuous active control for maintaining balance.
+2. Dynamic movement requires accurate state estimation and modelling.
+3. Mechanical and control complexity is higher than conventional wheeled robots.
+4. Actuator and battery performance constrain the robot's capabilities.
+5. Initial testing is intended for controlled environments.
 
 ---
 
 ## Future Scope
 
-Mention possible improvements.
+Future development may include:
 
-1.
-2.
-3.
-4.
-
----
-
-## Research Paper / Publication
-
-| Item                      | Details                                                   |
-| ------------------------- | --------------------------------------------------------- |
-| Paper Title               |                                                           |
-| Conference / Journal Name |                                                           |
-| Paper Status              | Not Started / Drafting / Submitted / Accepted / Published |
-| Submission Date           |                                                           |
-| Paper Link                |                                                           |
+* Autonomous navigation
+* Advanced sensor fusion and state estimation
+* Adaptive and robust control
+* Improved landing and impact control
+* More complex dynamic movements
+* Real-time optimization of the dynamic model
+* Improved mechanical and actuator design
 
 ---
 
 ## References
 
-Add references in IEEE format.
-
-Example:
+References, research papers, datasheets, and other technical resources used during development will be maintained in:
 
 ```text
-[1] A. Author, B. Author, "Title of the Paper," Journal/Conference Name, vol. X, no. Y, pp. xx-yy, Year.
-[2] Datasheet / Website / Book reference.
+reference/
 ```
 
 ---
 
 ## Repository Update Guidelines
 
-Each student team must update the GitHub repository regularly.
+The repository will be updated continuously throughout the development of ZAEMON.
 
-Minimum expected updates:
+* Keep the README updated with major project changes.
+* Maintain weekly progress updates.
+* Commit code and design changes regularly.
+* Upload relevant CAD, PCB, schematic, and simulation files.
+* Document important engineering decisions.
+* Add experimental results as testing progresses.
+* Use meaningful commit messages.
+* Avoid committing temporary or unnecessary generated files.
 
-* Update README every week.
-* Push code changes regularly.
-* Upload circuit diagrams, CAD files, PCB files, reports and presentations.
-* Add weekly progress in the progress table.
-* Maintain proper folder structure.
-* Do not upload unnecessary temporary files.
-* Each major update should have a meaningful commit message.
-
-Example commit messages:
+### Example Commit Messages
 
 ```text
-Added problem statement and objectives
-Updated system architecture diagram
-Added sensor interfacing code
-Updated weekly progress for Week 3
-Added testing results and prototype images
+Add initial system architecture
+Add ZAEMON mechanical design
+Add IMU interface
+Implement balance controller
+Add Lagrangian dynamic model
+Add Newton-Euler inverse dynamics
+Add trajectory generation
+Update weekly progress
+Add prototype testing results
+Update control documentation
 ```
-
----
-
-## Declaration
-
-We declare that this project work is carried out by our team as part of the BE Capstone Project. The work will be regularly updated on GitHub and all references used will be properly cited.
 
 ---
 
 ## License
 
-This project is for academic use only.
+This project is developed as part of the BE Capstone Project at VESIT, Mumbai.
 
-Optional:
-
-```text
-MIT License / Creative Commons / Institute Use Only
-```
-
-```
-```
+**For academic and research purposes.**
