@@ -1,7 +1,5 @@
 # BE Capstone Project
 
-## Project Title
-
 **ZAEMON — Dynamically Balanced Wheeled Bipedal Robot**
 
 ---
@@ -19,9 +17,12 @@
 
 ## Guide Details
 
-**Project Guide: **
-**Department:** Automation and Robotics
-**Institute:** VESIT, Mumbai
+**Project Guide:** 
+Madhumati Khuspe  
+**Department:** 
+Automation and Robotics  
+**Institute:** 
+Vivekanand Education Society's Institute of Technology, Mumbai
 
 ---
 
@@ -29,17 +30,17 @@
 
 Conventional wheeled robots provide efficient locomotion but are generally limited to stable configurations and relatively simple movements. Legged robots offer greater mobility and dynamic capabilities but require more complex mechanical structures and control systems.
 
-The aim of ZAEMON is to design and develop a dynamically balanced wheeled bipedal robot capable of maintaining balance, performing controlled wheeled locomotion, and executing dynamic movements such as jumping through real-time sensing, trajectory planning, dynamic modelling, and feedback control.
+The aim of ZAEMON is to design and develop an open source dynamically balanced wheeled bipedal robot platform and hardware capable of maintaining balance, performing controlled wheeled locomotion, and executing dynamic movements such as jumping through real-time sensing, trajectory planning, dynamic modelling, and feedback control.
 
 ---
 
 ## Abstract
 
-ZAEMON is a dynamically balanced wheeled bipedal robot developed to combine the efficiency of wheeled locomotion with the dynamic capabilities of a legged robotic system. Due to its elevated center of mass, the robot behaves similarly to an inverted pendulum and requires continuous active stabilization to remain balanced.
+ZAEMON is a dynamically balanced wheeled bipedal robot developed to combine the efficiency of wheeled locomotion with the dynamic capabilities of a legged robotic system. Due to its variable center of mass, the robot behaves similarly to an inverted pendulum and requires continuous active stabilization to remain balanced.
 
-The project focuses on the mechanical design, kinematic and dynamic modelling, trajectory planning, and real-time control of the robot. Lagrangian mechanics is used to formulate the equations of motion, while the Newton-Euler method is used for efficient inverse dynamics computation. Joint-space and Cartesian-space trajectory planning are used to generate smooth and controlled movements for crouching, launching, landing, and wheeled locomotion.
+The project focuses on the mechanical design, kinematic and dynamic modelling and real-time control of the robot.
 
-An IMU provides real-time orientation feedback for estimating the robot's tilt and motion. PID control is used for balance stabilization and normal locomotion, while computed torque control is investigated for dynamic movements such as jumping. Cubic spline trajectories are used to generate smooth motion profiles and reduce sudden changes in motion.
+An IMU provides real-time orientation feedback for estimating the robot's tilt and motion. PID control is used for balance stabilization and normal locomotion, while computed torque control is investigated for dynamic movements such as jumping.
 
 The project aims to develop and experimentally validate a compact robotic platform capable of dynamic balancing, controlled locomotion, and agile movement.
 
@@ -49,39 +50,16 @@ The project aims to develop and experimentally validate a compact robotic platfo
 
 1. To design and develop a dynamically balanced wheeled bipedal robot.
 2. To study the kinematics and dynamics of the robotic system.
-3. To develop a mathematical model using Lagrangian mechanics.
-4. To implement inverse dynamics using the Newton-Euler method.
-5. To develop smooth joint-space and Cartesian-space trajectories.
-6. To implement real-time balance control using IMU feedback.
-7. To implement PID-based stabilization for balancing and locomotion.
-8. To investigate computed torque control for dynamic movements.
-9. To integrate the mechanical, electrical, and software systems.
-10. To experimentally test and validate the developed system.
+3. To implement inverse dynamics.
+4. To develop smooth joint-space and Cartesian-space trajectories.
+5. To implement real-time balance control using IMU feedback.
+6. To implement PID-based stabilization for balancing and locomotion.
+7. To investigate computed torque control for dynamic movements.
+8. To integrate the mechanical, electrical, and software systems.
+9. To experimentally test and validate the developed system.
 
 ---
 
-## Scope of the Project
-
-The project covers:
-
-* Mechanical design and development
-* Motor and actuator selection
-* Embedded control system development
-* IMU-based state estimation
-* Kinematic modelling
-* Dynamic modelling
-* Lagrangian formulation
-* Newton-Euler inverse dynamics
-* Joint-space trajectory planning
-* Cartesian-space trajectory planning
-* Cubic spline trajectory generation
-* PID-based balance control
-* Computed torque control
-* Wheeled locomotion
-* Dynamic movement and jumping
-* Simulation and experimental validation
-
----
 
 ## Existing System
 
@@ -166,11 +144,11 @@ The overall system consists of the mechanical structure, actuators, sensors, mot
 
 The hardware architecture consists of:
 
-* Microcontroller
-* IMU
-* Motors and actuators
-* Motor drivers
-* Encoders
+* Microcontroller ESP32 S3
+* IMU MPU6050
+* Motors and actuators - BLDC Gimbal Motor
+* Motor drivers - DRV8313 FOC driver
+* Encoders - AS5600 Magnetic encoder
 * Power supply and battery system
 * Voltage regulation and power distribution circuitry
 
@@ -183,30 +161,10 @@ Detailed hardware specifications will be documented as the design is finalized.
 The software development environment includes:
 
 * Embedded firmware development tools
-* MATLAB / Simulink for modelling and simulation
+* MATLAB for modelling and simulation
 * Python for analysis and supporting tools
 * CAD software for mechanical design
 * Git and GitHub for version control and documentation
-
----
-
-## Technologies Used
-
-* Embedded Systems
-* IMU-based State Estimation
-* PID Control
-* Computed Torque Control
-* Kinematic Modelling
-* Lagrangian Dynamics
-* Newton-Euler Dynamics
-* Inverse Dynamics
-* Joint-Space Trajectory Planning
-* Cartesian-Space Trajectory Planning
-* Cubic Spline Trajectory Generation
-* MATLAB / Python Simulation
-* CAD Design
-* PCB and Electronics Design
-* Git and GitHub
 
 ---
 
@@ -234,10 +192,10 @@ The project follows an iterative development approach:
 
 | Phase | Task                                        | Status      |
 | ----- | ------------------------------------------- | ----------- |
-| 1     | Problem definition and literature survey    | In Progress |
-| 2     | System and mechanical design                | Planned     |
+| 1     | Problem definition and literature survey    | Completed|
+| 2     | System and mechanical design                | In Progress     |
 | 3     | Kinematic and dynamic modelling             | Planned     |
-| 4     | Electronics and embedded system development | Planned     |
+| 4     | Electronics and embedded system development | In Progress     |
 | 5     | Trajectory planning and control development | Planned     |
 | 6     | Prototype fabrication and integration       | Planned     |
 | 7     | Testing and validation                      | Planned     |
@@ -245,13 +203,6 @@ The project follows an iterative development approach:
 
 ---
 
-## Weekly Progress Updates
-
-| Week   | Date | Work Completed | Next Steps | Issues / Challenges |
-| ------ | ---- | -------------- | ---------- | ------------------- |
-| Week 1 |      |                |            |                     |
-
----
 
 ## Design Files
 
