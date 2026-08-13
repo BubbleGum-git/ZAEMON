@@ -1,6 +1,7 @@
 # BE Capstone Project
 
-**ZAEMON — Dynamically Balanced Wheeled Bipedal Robot**
+**ZAEMON — Dynamically Balanced Wheeled Bipedal Robot**  
+[Our Project proposal presentation](https://www.youtube.com/watch?v=3FdDc5E4eX4)
 
 ---
 
