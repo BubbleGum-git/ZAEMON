@@ -212,9 +212,6 @@ Design files are maintained in the following directories:
 ```text
 hardware/
 ├── CAD/
-├── PCB/
-├── schematics/
-└── BOM/
 ```
 
 ---
