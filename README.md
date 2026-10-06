@@ -78,70 +78,8 @@ ZAEMON explores a hybrid approach that combines efficient wheeled locomotion wit
 
 ---
 
-## Proposed System
 
-ZAEMON combines wheeled locomotion with an actively controlled bipedal structure.
-
-The system uses:
-
-* Wheels for efficient ground locomotion
-* Actuated leg joints for posture and dynamic movement
-* IMU feedback for real-time balance estimation
-* Embedded control for real-time computation
-* Kinematic and dynamic models for motion analysis
-* Trajectory planning for controlled movement
-* PID control for balance stabilization
-* Computed torque control for dynamic movements
-
-During balancing, ZAEMON is modelled as an inverted pendulum on wheels. The controller continuously estimates the robot's state and generates corrective motor commands to maintain stability.
-
----
-
-## System Architecture
-
-The overall system consists of the mechanical structure, actuators, sensors, motor drivers, embedded controller, and control algorithms.
-
-![System Architecture](images/system_architecture.png)
-
-### Control Flow
-
-```text
-             Sensors
-          IMU / Encoders
-                |
-                v
-        State Estimation
-                |
-                v
-       Trajectory Planning
-                |
-                v
-      Kinematics / Dynamics
-                |
-                v
-            Control
-          /         \
-        PID     Computed Torque
-          \         /
-                |
-                v
-         Motor Commands
-                |
-                v
-         Motor Drivers
-                |
-                v
-            Actuators
-                |
-                v
-          Robot Motion
-                |
-                └──────> Sensor Feedback
-```
-
----
-
-## Hardware Requirements
+## Current Hardware
 
 The hardware architecture consists of:
 
@@ -156,54 +94,6 @@ The hardware architecture consists of:
 Detailed hardware specifications will be documented as the design is finalized.
 
 ---
-
-## Software Requirements
-
-The software development environment includes:
-
-* Embedded firmware development tools
-* MATLAB for modelling and simulation
-* Python for analysis and supporting tools
-* CAD software for mechanical design
-* Git and GitHub for version control and documentation
-
----
-
-## Methodology
-
-The project follows an iterative development approach:
-
-1. Literature survey and study of dynamically balanced robotic systems.
-2. Identification of mechanical, electrical, and control requirements.
-3. Mechanical and electrical system design.
-4. Selection of actuators, sensors, controllers, and power components.
-5. Development of the kinematic model.
-6. Development of the dynamic model using Lagrangian mechanics.
-7. Development of inverse dynamics using the Newton-Euler method.
-8. Development of joint-space and Cartesian-space trajectories.
-9. Implementation of PID-based balance control.
-10. Development of computed torque control for dynamic movement.
-11. Simulation and validation of the control system.
-12. Hardware fabrication and system integration.
-13. Experimental testing and performance evaluation.
-
----
-
-## Project Timeline
-
-| Phase | Task                                        | Status      |
-| ----- | ------------------------------------------- | ----------- |
-| 1     | Problem definition and literature survey    | Completed|
-| 2     | System and mechanical design                | In Progress     |
-| 3     | Kinematic and dynamic modelling             | Planned     |
-| 4     | Electronics and embedded system development | In Progress     |
-| 5     | Trajectory planning and control development | Planned     |
-| 6     | Prototype fabrication and integration       | Planned     |
-| 7     | Testing and validation                      | Planned     |
-| 8     | Final documentation                         | Planned     |
-
----
-
 
 ## Design Files
 
@@ -221,40 +111,6 @@ hardware/
 The circuit diagram will be added as the electronics architecture is finalized.
 
 ---
-
-## Flowchart / Algorithm
-
-The control flow of ZAEMON follows a continuous feedback loop:
-
-```text
-Start
-  |
-  v
-Initialize System
-  |
-  v
-Read IMU / Encoder Data
-  |
-  v
-Estimate Robot State
-  |
-  v
-Generate Desired Trajectory
-  |
-  v
-Calculate Control Action
-  |
-  v
-Generate Motor Commands
-  |
-  v
-Drive Motors
-  |
-  v
-Read Updated State
-  |
-  └──────────────> Repeat
-```
 
 ### Control Algorithm
 
@@ -279,27 +135,7 @@ The hardware implementation consists of the mechanical structure, actuators, mot
 
 The mechanical structure is designed to provide the required degrees of freedom for balancing, locomotion, and dynamic movement.
 
-### Software Implementation
-
-The software is organized into firmware, control algorithms, simulation, and supporting tools.
-
-```text
-software/
-├── firmware/
-├── control/
-├── simulation/
-└── tools/
-```
-
-The control software handles:
-
-* Sensor acquisition
-* State estimation
-* Trajectory generation
-* Dynamic calculations
-* Controller execution
-* Motor command generation
-* Real-time feedback
+ime feedback
 
 ---
 
@@ -383,46 +219,6 @@ Future development may include:
 * More complex dynamic movements
 * Real-time optimization of the dynamic model
 * Improved mechanical and actuator design
-
----
-
-## References
-
-References, research papers, datasheets, and other technical resources used during development will be maintained in:
-
-```text
-reference/
-```
-
----
-
-## Repository Update Guidelines
-
-The repository will be updated continuously throughout the development of ZAEMON.
-
-* Keep the README updated with major project changes.
-* Maintain weekly progress updates.
-* Commit code and design changes regularly.
-* Upload relevant CAD, PCB, schematic, and simulation files.
-* Document important engineering decisions.
-* Add experimental results as testing progresses.
-* Use meaningful commit messages.
-* Avoid committing temporary or unnecessary generated files.
-
-### Example Commit Messages
-
-```text
-Add initial system architecture
-Add ZAEMON mechanical design
-Add IMU interface
-Implement balance controller
-Add Lagrangian dynamic model
-Add Newton-Euler inverse dynamics
-Add trajectory generation
-Update weekly progress
-Add prototype testing results
-Update control documentation
-```
 
 ---
 
