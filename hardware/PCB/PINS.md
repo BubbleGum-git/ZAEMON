@@ -14,6 +14,7 @@
 | Driver B IN1                  | DRV8313 #2          | 23   | PWM                          |
 | Driver B IN2                  | DRV8313 #2          | 25   | PWM                          |
 | Driver B IN3                  | DRV8313 #2          | 26   | PWM                          |
+| Driver A nFAULT                | DRV8313 #1          | 39(VN)   | Input, no internal pull      |
 | nSLEEP (shared, both drivers) | DRV8313 #1 + #2     | 27   | Output, kill switch           |
 | Servo A data                  | Servo #1            | 13   | PWM Data                      |
 | Servo B data                  | Servo #2            | 14   | PWM Data                      |
