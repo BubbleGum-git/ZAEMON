@@ -2,8 +2,8 @@
 |-------------------------------|---------------------|------|------------------------------|
 | I2C0 SDA(Left)                      | MPU6050 + AS5600 #1 | 21   | Bus                          |
 | I2C0 SCL(Left)                      | MPU6050 + AS5600 #1 | 22   | Bus                          |
-| I2C1 SDA(Right)                      | AS5600 #2           | 32   | Bus                          |
-| I2C1 SCL(Right)                      | AS5600 #2           | 33   | Bus                          |
+| I2C1 SDA(Right)                      | AS5600 #2           | 33   | Bus                          |
+| I2C1 SCL(Right)                      | AS5600 #2           | 32   | Bus                          |
 | MPU6050 INT                   | MPU6050             | 34   | Input, no internal pull      |
 | Driver Left EN                   | DRV8313 #1          | 4    | 3.3V                       |
 | Driver Left IN1                  | DRV8313 #1          | 16   | PWM                          |
